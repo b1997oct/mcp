@@ -1,43 +1,47 @@
-# Astro Starter Kit: Minimal
+## 🤖 MCP Server
 
+This project includes a Model Context Protocol (MCP) server that exposes the same tools as the Gemini Agent (Weather, User Info, Todo List).
+
+### Running the MCP server
+To start the MCP server locally:
 ```sh
-npm create astro@latest -- --template minimal
+npm run mcp
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+### Setup with Claude Desktop (Local)
+... (existing local config) ...
 
-## 🚀 Project Structure
+## 🌐 Use it from a Link (Deployment)
 
-Inside of your Astro project, you'll see the following folders and files:
+You can deploy the **Agent UI & API** to Vercel and expose your **MCP Server** via ngrok.
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+### 1. Deploy the Web UI & API to Vercel
+1.  Push your code to GitHub.
+2.  Import the project into [Vercel](https://vercel.com).
+3.  Add `GOOGLE_API_KEY` to **Project Settings -> Environment Variables**.
+4.  Your agent will be at `https://your-project.vercel.app`.
+
+### 2. Use the "Link" version (API)
+Your app provides two public endpoints:
+*   **Chat API**: `https://your-project.vercel.app/api/chat` (Regular JSON)
+*   **MCP Gateway**: `https://your-project.vercel.app/api/mcp` (MCP JSON-RPC)
+
+#### Example Chat Call:
+```bash
+curl -X POST https://your-project.vercel.app/api/chat \
+  -H "Content-Type: application/json" \
+  -d '{"prompt": "What time is it?"}'
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+#### Example MCP Tool List:
+```bash
+curl -X POST https://your-project.vercel.app/api/mcp \
+  -H "Content-Type: application/json" \
+  -d '{"jsonrpc": "2.0", "id": 1, "method": "tools/list"}'
+```
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+### 3. Expose the MCP Server via a Link (Local)
+...
 
 ## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+...
