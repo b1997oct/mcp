@@ -1,7 +1,7 @@
 ## 🤖MCP
 
 ### Core Capabilities:
-*   **🌦️ Real-time Weather**: Provides current atmospheric conditions for any location.
+*   **🌦️ Weather**: Provides current atmospheric conditions for any location.
 *   **⏰ System Time**: Syncs the agent with the exact local system clock.
 *   **👤 Contextual Awareness**: Accesses local user information to personalize AI responses.
 *   **🔌 Universal Connectivity**: Fully compatible with any MCP client (Cursor, Claude Desktop, etc.).
@@ -11,6 +11,10 @@ To start the MCP server locally:
 ```sh
 npm run mcp
 ```
+
+**Agent_B1997** helps you to connecting & testing MCP.
+
+...
 
 ### Setup with Claude Desktop (Local)
 ... (existing local config) ...
@@ -30,9 +34,3 @@ curl -X POST http://localhost:3000/api/mcp \
   -d '{"jsonrpc": "2.0", "id": 1, "method": "tools/list"}'
 ```
 
-**Agent_B1997** helps you to connecting & testing MCP.
-
-...
-
-## 👀 Want to learn more?
-...
