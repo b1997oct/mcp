@@ -46,10 +46,10 @@ export const AgentUI = () => {
                 <div className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded-full bg-linear-to-tr from-blue-500 to-purple-500 animate-pulse" />
                     <h1 className="text-2xl font-bold bg-linear-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
-                        Gemini Agent
+                        Agent_B1997OCT
                     </h1>
                 </div>
-                <div className="text-xs text-slate-500 font-mono tracking-widest uppercase">Powered by Google AI</div>
+                <div className="text-xs text-slate-500 font-mono tracking-widest uppercase">Neural Interface</div>
             </header>
 
             <div
@@ -61,7 +61,7 @@ export const AgentUI = () => {
                         <div className="w-16 h-16 mb-4 rounded-full border-2 border-dashed border-slate-400 flex items-center justify-center">
                             <span className="text-4xl text-slate-400 mt-[-4px]">?</span>
                         </div>
-                        <p className="text-slate-400 italic text-center">Ready to help with weather, user info, or your todo list.</p>
+                        <p className="text-slate-400 italic text-center">Ready to help with weather, user info, or current time.</p>
                     </div>
                 )}
 
@@ -108,7 +108,7 @@ export const AgentUI = () => {
                     type="text"
                     value={prompt}
                     onChange={(e) => setPrompt(e.target.value)}
-                    placeholder="Ask something... (e.g. what's on my todo list?)"
+                    placeholder="Ask something... (e.g. what's the weather?)"
                     className="flex-1 bg-slate-800 border border-slate-700 rounded-xl px-5 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all text-slate-100 placeholder:text-slate-500"
                     disabled={loading}
                 />

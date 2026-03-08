@@ -35,42 +35,7 @@ const tools: Tool[] = [
                     required: ["userId"],
                 },
             },
-            {
-                name: "add_todo",
-                description: "Add a new task to the user's todo list",
-                parameters: {
-                    type: SchemaType.OBJECT,
-                    properties: {
-                        task: {
-                            type: SchemaType.STRING,
-                            description: "The description of the task to add",
-                        },
-                    },
-                    required: ["task"],
-                },
-            },
-            {
-                name: "list_todos",
-                description: "List all current tasks in the todo list",
-                parameters: {
-                    type: SchemaType.OBJECT,
-                    properties: {},
-                },
-            },
-            {
-                name: "remove_todo",
-                description: "Remove a task from the todo list by its description or index",
-                parameters: {
-                    type: SchemaType.OBJECT,
-                    properties: {
-                        taskIdentifier: {
-                            type: SchemaType.STRING,
-                            description: "The task text or index to remove",
-                        },
-                    },
-                    required: ["taskIdentifier"],
-                },
-            },
+
             {
                 name: "get_current_time",
                 description: "Get the current day and time",
@@ -100,7 +65,7 @@ export class GoogleAgent {
         // Initialize the model with the tools
         this.model = genAI.getGenerativeModel({
             model: "gemini-2.5-flash-lite",
-            tools: tools,
+            tools: tools
         });
 
         // Start a chat session to maintain context

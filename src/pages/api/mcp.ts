@@ -32,25 +32,7 @@ const toolDefinitions = [
             required: ["location"],
         },
     },
-    {
-        name: "add_todo",
-        description: "Add a new task to the user's todo list",
-        inputSchema: {
-            type: "object",
-            properties: {
-                task: { type: "string", description: "Task description" },
-            },
-            required: ["task"],
-        },
-    },
-    {
-        name: "list_todos",
-        description: "List all current tasks in the todo list",
-        inputSchema: {
-            type: "object",
-            properties: {},
-        },
-    },
+
     {
         name: "get_current_time",
         description: "Get the current system time and date",

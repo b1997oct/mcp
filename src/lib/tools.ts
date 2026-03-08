@@ -2,8 +2,7 @@
  * Shared tools and state for both Gemini Agent and MCP Server
  */
 
-// Mock Database
-export const todos: string[] = ["Buy groceries", "Finish agent build"];
+
 
 export const toolHandlers = {
     get_weather: async ({ location }: { location: string }) => {
@@ -23,29 +22,7 @@ export const toolHandlers = {
         };
         return users[userId] || { error: "User not found" };
     },
-    add_todo: async ({ task }: { task: string }) => {
-        console.log(`[Tools] Adding todo: ${task}`);
-        todos.push(task);
-        return { success: true, message: `Added "${task}" to your list.` };
-    },
-    list_todos: async () => {
-        console.log(`[Tools] Listing todos`);
-        return { todos };
-    },
-    remove_todo: async ({ taskIdentifier }: { taskIdentifier: string }) => {
-        console.log(`[Tools] Removing todo: ${taskIdentifier}`);
-        const index = parseInt(taskIdentifier);
-        if (!isNaN(index) && todos[index]) {
-            const removed = todos.splice(index, 1);
-            return { success: true, message: `Removed "${removed[0]}"` };
-        }
-        const foundIndex = todos.findIndex(t => t.toLowerCase().includes(taskIdentifier.toLowerCase()));
-        if (foundIndex !== -1) {
-            const removed = todos.splice(foundIndex, 1);
-            return { success: true, message: `Removed "${removed[0]}"` };
-        }
-        return { success: false, message: "Task not found." };
-    },
+
     get_current_time: async () => {
         console.log(`[Tools] Getting current time`);
         return {
