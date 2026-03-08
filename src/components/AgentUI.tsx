@@ -46,7 +46,7 @@ export const AgentUI = () => {
                 <div className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded-full bg-linear-to-tr from-blue-500 to-purple-500 animate-pulse" />
                     <h1 className="text-2xl font-bold bg-linear-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
-                        Agent_B1997OCT
+                        Agent_B1997
                     </h1>
                 </div>
                 <div className="text-xs text-slate-500 font-mono tracking-widest uppercase">Neural Interface</div>
@@ -57,11 +57,17 @@ export const AgentUI = () => {
                 className="flex-1 space-y-6 mb-6 overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-slate-700 scrollbar-track-transparent custom-scrollbar"
             >
                 {results.length === 0 && (
-                    <div className="flex flex-col items-center justify-center h-full opacity-30 select-none">
-                        <div className="w-16 h-16 mb-4 rounded-full border-2 border-dashed border-slate-400 flex items-center justify-center">
+                    <div className="flex flex-col items-center justify-center h-full opacity-30 select-none text-center px-4">
+                        <div className="w-16 h-16 mb-6 rounded-full border-2 border-dashed border-slate-400 flex items-center justify-center">
                             <span className="text-4xl text-slate-400 mt-[-4px]">?</span>
                         </div>
-                        <p className="text-slate-400 italic text-center">Ready to help with weather, user info, or current time.</p>
+                        <h2 className="text-xl font-bold text-slate-300 mb-2">Agent_B1997</h2>
+                        <p className="text-slate-400 italic mb-4 max-w-md">
+                            Your gateway to Model Context Protocol (MCP) tools.
+                        </p>
+                        <p className="text-sm text-slate-500">
+                            Ready to assist with weather, user info, or the current time.
+                        </p>
                     </div>
                 )}
 

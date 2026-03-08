@@ -1,6 +1,10 @@
-## 🤖 MCP Server
+## 🤖MCP
 
-This project includes a Model Context Protocol (MCP) server that exposes the same tools as the Gemini Agent (Weather, User Info, Todo List).
+### Core Capabilities:
+*   **🌦️ Real-time Weather**: Provides current atmospheric conditions for any location.
+*   **⏰ System Time**: Syncs the agent with the exact local system clock.
+*   **👤 Contextual Awareness**: Accesses local user information to personalize AI responses.
+*   **🔌 Universal Connectivity**: Fully compatible with any MCP client (Cursor, Claude Desktop, etc.).
 
 ### Running the MCP server
 To start the MCP server locally:
@@ -11,36 +15,23 @@ npm run mcp
 ### Setup with Claude Desktop (Local)
 ... (existing local config) ...
 
-## 🌐 Use it from a Link (Deployment)
+## 🌐 Local Deployment (API)
 
-You can deploy the **Agent UI & API** to Vercel and expose your **MCP Server** via ngrok.
+Once you start the project using `npm run dev`, you can access the **Agent UI & API** locally.
 
-### 1. Deploy the Web UI & API to Vercel
-1.  Push your code to GitHub.
-2.  Import the project into [Vercel](https://vercel.com).
-3.  Add `GOOGLE_API_KEY` to **Project Settings -> Environment Variables**.
-4.  Your agent will be at `https://your-project.vercel.app`.
+### 1. Local API Endpoints
+*   **MCP Gateway**: `http://localhost:3000/api/mcp` (MCP JSON-RPC)
 
-### 2. Use the "Link" version (API)
-Your app provides two public endpoints:
-*   **Chat API**: `https://your-project.vercel.app/api/chat` (Regular JSON)
-*   **MCP Gateway**: `https://your-project.vercel.app/api/mcp` (MCP JSON-RPC)
-
-#### Example Chat Call:
-```bash
-curl -X POST https://your-project.vercel.app/api/chat \
-  -H "Content-Type: application/json" \
-  -d '{"prompt": "What time is it?"}'
-```
 
 #### Example MCP Tool List:
 ```bash
-curl -X POST https://your-project.vercel.app/api/mcp \
+curl -X POST http://localhost:3000/api/mcp \
   -H "Content-Type: application/json" \
   -d '{"jsonrpc": "2.0", "id": 1, "method": "tools/list"}'
 ```
 
-### 3. Expose the MCP Server via a Link (Local)
+**Agent_B1997** helps you to connecting & testing MCP.
+
 ...
 
 ## 👀 Want to learn more?

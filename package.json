@@ -7,7 +7,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "mcp": "tsx src/mcp-server.ts"
+    "mcp": "npm i && npx astro dev"
   },
   "dependencies": {
     "@astrojs/react": "^4.4.2",
